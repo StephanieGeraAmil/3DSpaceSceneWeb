@@ -1,0 +1,60 @@
+canvas {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+:root {
+  --spacing: 1vw;
+  background-color: rgba(15, 15, 15, 0.95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+main {
+  z-index: 99;
+  position: absolute;
+  width: 80%;
+  margin: 0px auto;
+  padding: 120px 0px;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  font-size: 2vw;
+}
+
+h1,
+h2,
+h3 {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+h1 {
+  font-size: 11vw;
+}
+h2 {
+  font-size: 5vw;
+}
+h3 {
+  font-size: 3vw;
+}
+
+header {
+  grid-column: 2 / span 5;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+}
+
+section {
+  grid-column: 2 / 8;
+  padding: 1rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+}
+
+.left {
+  grid-column: 6 / 11;
+}
