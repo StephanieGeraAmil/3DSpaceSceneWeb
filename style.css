@@ -44,12 +44,14 @@ h3 {
 
 header {
   grid-column: 2 / span 5;
+  /* span says that starting at column 2 it tackes 5 columns */
   padding: 2rem;
   margin-bottom: var(--spacing);
 }
 
 section {
   grid-column: 2 / 8;
+  /* it starts at  column 2 and it ends at column 8 */
   padding: 1rem;
   line-height: 1.5;
   margin-bottom: var(--spacing);
