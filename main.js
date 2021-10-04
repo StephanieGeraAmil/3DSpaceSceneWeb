@@ -2,6 +2,8 @@ import './style.css';
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 //for moving around using our mouse
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
+//for importing fbx 3d models
 
 const scene=new THREE.Scene();
 //scene->container
@@ -91,6 +93,32 @@ const moon= new THREE.Mesh(moongeometry,moonmaterial);
 moon.position.z=30;
 moon.position.x=-10;
 scene.add(moon);
+
+
+const fbxLoader = new FBXLoader()
+fbxLoader.load(
+    'groot.fbx',
+    (object) => {
+      object.scale.set( 0.1, 0.1, 0.1 );
+      object.position.set(15,-45,-15);
+        // object.traverse(function (child) {
+        //     if ((child as THREE.Mesh).isMesh) {
+        //         // (child as THREE.Mesh).material = material
+        //         if ((child as THREE.Mesh).material) {
+        //             ((child as THREE.Mesh).material as THREE.MeshBasicMaterial).transparent = false
+        //         }
+        //     }
+        // })
+        // object.scale.set(.01, .01, .01)
+        scene.add(object)
+    },
+    (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
 
 function moveCamera(){
   //calculate where the user is scrolling to
